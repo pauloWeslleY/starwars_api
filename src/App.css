@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(211, 211, 211);
+}
+
 .star_wars_logo {
   height: 40vmin;
   pointer-events: none;
@@ -8,7 +12,6 @@
 }
 
 .h_star_wars_header {
-  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,6 +20,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
   margin-top: -180px;
+}
+
+.g-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  cursor: pointer;
 }
 
 @keyframes banner_img {
@@ -32,7 +45,14 @@
 }
 
 
-/*
+/* .star_wars {
+  text-align: center;
+}
+
+.star_wars_logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .star_wars_logo {
@@ -40,12 +60,22 @@
   }
 }
 
-
-
-@keyframes star_wars_logo-spin {
+.h_star_wars_header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-top: -140px;
+}
+keyframes star_wars_logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

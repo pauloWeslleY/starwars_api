@@ -22,9 +22,9 @@ export default function Starships() {
                   <h1 key={starships.starshipsid}>Starships</h1>
 
                   <div>
-                     {starships.map((value) => {
+                     {starships.map((value, i) => {
                         return (
-                           <h3 key={starships.starshipsid}>{ value.name }</h3>
+                           <h3 key={i}>{ value.name }</h3>
                         )
                      })}
                   </div>

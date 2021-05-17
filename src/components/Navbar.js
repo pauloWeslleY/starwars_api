@@ -13,9 +13,8 @@ import {
 
 const Headers = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+   const [isOpen, setIsOpen] = useState(false);
+   const toggle = () => setIsOpen(!isOpen);
 
    return (
       <div>
