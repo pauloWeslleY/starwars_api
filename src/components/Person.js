@@ -64,7 +64,7 @@ export default function Person(props) {
          setAllPerson4(data.results);
       }
 
-      //* People Detail
+      //! People Detail
       async function getPeople1() {
          let res = await fetch('https://swapi.dev/api/people/1/');
          let data = await res.json();
@@ -120,19 +120,18 @@ export default function Person(props) {
       getPeople7();
       getPeople8();
       getPeople9();
-      //?All People
+      //! All People
       getAllPerson();
       getAllPerson2();
       getAllPerson3();
       getAllPerson4();
 
-      fetch('https://swapi.dev/api/people/?format=json')
-         .then(response => response.json())
-         .then(data => {
-            console.log(data);
-         });
+      // fetch('https://swapi.dev/api/people/?format=json')
+      //    .then(response => response.json())
+      //    .then(data => {
+      //       console.log(data);
+      //    });
    }, [])
-   console.log('people', person);
    return (
       <>
          <Container fluid={true}>

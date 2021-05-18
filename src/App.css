@@ -32,6 +32,11 @@ body {
   cursor: pointer;
 }
 
+.hrLine {
+  width: 500px;
+  border-color: black;
+}
+
 @keyframes banner_img {
   0% {
     opacity: 0;

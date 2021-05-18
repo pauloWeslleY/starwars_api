@@ -50,6 +50,11 @@ const Headers = () => {
                         <NavLink href="/components/">Starships</NavLink>
                      </NavItem>
                   </Link>
+                  <Link to='/species'>
+                     <NavItem>
+                        <NavLink href="/components/">Species</NavLink>
+                     </NavItem>
+                  </Link>
                </Nav>
                <NavbarText>StarWars API</NavbarText>
             </Collapse>

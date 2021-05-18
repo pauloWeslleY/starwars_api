@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Planets from '../assets/planets.svg';
 import PlanetsHoth from '../assets/planets_hoth.svg';
 import PlanetsCoruscant from '../assets/planets_coruscant.svg';
@@ -7,6 +8,7 @@ import {
    Row,
    Col,
    Jumbotron,
+   Button,
    Card,
    CardTitle,
    CardText,
@@ -85,7 +87,7 @@ export default function People(props) {
          setPlanets10(data);
       }
       async function getPlanetsAll() {
-         let res = await fetch('https://swapi.dev/api/planets/?page=4&format=json');
+         let res = await fetch('https://swapi.dev/api/planets/?page=2&format=json');
          let data = await res.json();
          setPlanetsAll(data.results);
       }
@@ -114,6 +116,11 @@ export default function People(props) {
          <Container fluid={true}>
             <Jumbotron>
                <h1 className="text-center mb-3" >Planets</h1>
+               <div className="text-center">
+                  <Link to='/planetsMore'>
+                     <Button outline color="warning">More Planets</Button>
+                  </Link>
+               </div>
                <Row>
                   <Col>
                      <hr className="my-2"/>

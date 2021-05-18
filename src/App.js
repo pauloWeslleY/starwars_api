@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Logotipo from './Logotipo.svg';
 import './App.css';
 
@@ -9,12 +9,16 @@ import Planets from './components/Planets';
 import Films from './components/Films';
 import Nave from './components/Starships';
 import Vehicles from './components/Vehicles';
+import Species from './components/Species';
+import PlanetsMore from './components/Rest_Planets';
 
 import { Container } from 'reactstrap';
 
 const App = () => {
-
+   const [starships, setStarships] = useState([]);
    const [vehicles,  setVehicles] = useState([]);
+   const [species, setSpecies] = useState([]);
+   const [planetsMore, setPlanetsM] = useState([]);
    const [moves, setFilms] = useState([]);
    useEffect(() => {
       async function getFilms() {
@@ -27,10 +31,27 @@ const App = () => {
          let data = await res.json();
          setVehicles(data.results);
       }
+      async function getStarships() {
+         let res = await fetch('https://swapi.dev/api/starships/?format=json');
+         let data = await res.json();
+         setStarships(data.results);
+      }
+      async function getSpecies(){
+         let res = await fetch('https://swapi.dev/api/species/?format=json');
+         let data = await res.json();
+         setSpecies(data.results);
+      }
+      async function getPlanetsM(){
+         let res = await fetch('https://swapi.dev/api/species/?format=json');
+         let data = await res.json();
+         setPlanetsM(data.results);
+      }
+      getPlanetsM();
+      getSpecies();
       getVehicles();
       getFilms();
+      getStarships();
    }, [])
-
    return (
       <Router>
          <Headers />
@@ -49,7 +70,13 @@ const App = () => {
                   <Vehicles data={vehicles}/>
                </Route>
                <Route exact path='/starships'>
-                  <Nave />
+                  <Nave data={starships}/>
+               </Route>
+               <Route exact path='/species'>
+                  <Species data={species} />
+               </Route>
+               <Route exact path='/planetsMore'>
+                  <PlanetsMore data={planetsMore} />
                </Route>
                <header className="h_star_wars_header">
                   <img src={Logotipo} className="star_wars_logo" alt="logo" />

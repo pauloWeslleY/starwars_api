@@ -10,9 +10,7 @@ import {
    Jumbotron,
    List
 } from 'reactstrap';
-
 function Films({films}) {
-
    const [films1, setFilms1] = useState([]);
    const [films2, setFilms2] = useState([]);
    const [films3, setFilms3] = useState([]);
@@ -90,8 +88,8 @@ function Films({films}) {
                                     <li><strong>Director</strong>: { films1.director }</li>
                                     <li><strong>Sinopse</strong>: { films1.opening_crawl }</li>
                                     <li><strong>Planets</strong>: { films1.planets }</li>
-                                    <li><strong>Species</strong>: { films1.species }</li>
-                                    <li><strong>Starships</strong>: { films1.starships }</li>
+                                    <li><strong>Species</strong>: {films1.species }</li>
+                                    <li><strong>Starships</strong>: {films1.starships }</li>
                                     <li><strong>Url</strong>: { films1.url }</li>
                                  </List>
                               </CardBody>
@@ -100,14 +98,14 @@ function Films({films}) {
                         <UncontrolledCollapse toggler="#toggler2">
                            <Card>
                               <CardBody>
-                                <List type="unstyled">
+                                 <List type="unstyled">
                                     <li><h4>Filme 2: {films2.title}</h4></li>
                                     <li><p><strong>Episode</strong>: { films2.episode_id }</p></li>
                                     <li><p><strong>Director</strong>: { films2.director }</p></li>
                                     <li><p><strong>Sinopse</strong>: { films2.opening_crawl }</p></li>
-                                    <li><p><strong>Planets</strong>: { films2.planets }</p></li>
-                                    <li><p><strong>Species</strong>: { films2.species }</p></li>
-                                    <li><p><strong>Starships</strong>: { films2.starships }</p></li>
+                                    <li><strong>Planets</strong>: {films2.planets}</li>
+                                    <li><strong>Species</strong>: {films2.species }</li>
+                                    <li><strong>Starships</strong>: {films2.starships }</li>
                                     <li><p><strong>Url</strong>: { films2.url }</p></li>
                                  </List>
                               </CardBody>
@@ -121,9 +119,9 @@ function Films({films}) {
                                     <li><p><strong>Episode</strong>: { films3.episode_id }</p></li>
                                     <li><p><strong>Director</strong>: { films3.director }</p></li>
                                     <li><p><strong>Sinopse</strong>: { films3.opening_crawl }</p></li>
-                                    <li><p><strong>Planets</strong>: { films3.planets }</p></li>
-                                    <li><p><strong>Species</strong>: { films3.species }</p></li>
-                                    <li><p><strong>Starships</strong>: { films3.starships }</p></li>
+                                    <li><strong>Planets</strong>: {films3.planets }</li>
+                                    <li><strong>Species</strong>: {films3.species }</li>
+                                    <li><strong>Starships</strong>: {films3.starships}</li>
                                     <li><p><strong>Url</strong>: { films3.url }</p></li>
                                  </List>
                               </CardBody>
@@ -132,14 +130,14 @@ function Films({films}) {
                         <UncontrolledCollapse toggler="#toggler4">
                            <Card>
                               <CardBody>
-                                <List type="unstyled">
+                                 <List type="unstyled">
                                     <li><h4>Filme 4: {films4.title}</h4></li>
                                     <li><p><strong>Episode</strong>: { films4.episode_id }</p></li>
                                     <li><p><strong>Director</strong>: { films4.director }</p></li>
                                     <li><p><strong>Sinopse</strong>: { films4.opening_crawl }</p></li>
-                                    <li><p><strong>Planets</strong>: { films4.planets }</p></li>
-                                    <li><p><strong>Species</strong>: { films4.species }</p></li>
-                                    <li><p><strong>Starships</strong>: { films4.starships }</p></li>
+                                    <li><strong>Planets</strong>: {films4.planets}</li>
+                                    <li><strong>Species</strong>: {films4.species}</li>
+                                    <li><strong>Starships</strong>: {films4.starships}</li>
                                     <li><p><strong>Url</strong>: { films4.url }</p></li>
                                  </List>
                               </CardBody>
@@ -148,14 +146,14 @@ function Films({films}) {
                         <UncontrolledCollapse toggler="#toggler5">
                            <Card>
                               <CardBody>
-                                <List type="unstyled">
+                                 <List type="unstyled">
                                     <li><h4>Filme 5: {films5.title}</h4></li>
                                     <li><p><strong>Episode</strong>: { films5.episode_id }</p></li>
                                     <li><p><strong>Director</strong>: { films5.director }</p></li>
                                     <li><p><strong>Sinopse</strong>: { films5.opening_crawl }</p></li>
-                                    <li><p><strong>Planets</strong>: { films5.planets }</p></li>
-                                    <li><p><strong>Species</strong>: { films5.species }</p></li>
-                                    <li><p><strong>Starships</strong>: { films5.starships }</p></li>
+                                    <li><strong>Planets</strong>: {films5.planets}</li>
+                                    <li><strong>Species</strong>: {films5.species}</li>
+                                    <li><strong>Starships</strong>: {films5.starships}</li>
                                     <li><p><strong>Url</strong>: { films5.url }</p></li>
                                  </List>
                               </CardBody>
@@ -169,9 +167,9 @@ function Films({films}) {
                                     <li><p><strong>Episode</strong>: { films6.episode_id }</p></li>
                                     <li><p><strong>Director</strong>: { films6.director }</p></li>
                                     <li><p><strong>Sinopse</strong>: { films6.opening_crawl }</p></li>
-                                    <li><p><strong>Planets</strong>: { films6.planets }</p></li>
-                                    <li><p><strong>Species</strong>: { films6.species }</p></li>
-                                    <li><p><strong>Starships</strong>: { films6.starships }</p></li>
+                                    <li><strong>Planets</strong>: {films6.planets}</li>
+                                    <li><strong>Species</strong>: {films6.species }</li>
+                                    <li><strong>Starships</strong>: {films6.starships}</li>
                                     <li><p><strong>Url</strong>: { films6.url }</p></li>
                                  </List>
                               </CardBody>
