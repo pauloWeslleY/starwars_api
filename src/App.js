@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Logotipo from './Logotipo.svg';
-import './App.css';
+import "./style/global.css";
 
-import Headers from './components/Navbar';
-import Person from './components/Person';
-import Planets from './components/Planets';
-import Films from './components/Films';
-import Nave from './components/Starships';
-import Vehicles from './components/Vehicles';
-import Species from './components/Species';
-import PlanetsMore from './components/Rest_Planets';
+import Headers from "./components/Header/Navbar";
+import Person from "./components/Person/Person";
+import Planets from "./components/Planets/Planets";
+import PlanetsMore from "./components/Planets/Rest_Planets";
+import Films from "./components/Films/Films";
+import Nave from "./components/Starships/Starships";
+import Vehicles from "./components/Vehicles/Vehicles";
+import Species from "./components/Species/Species";
 
 import { Container } from 'reactstrap';
 
@@ -42,7 +42,7 @@ const App = () => {
          setSpecies(data.results);
       }
       async function getPlanetsM(){
-         let res = await fetch('https://swapi.dev/api/species/?format=json');
+         let res = await fetch("https://swapi.dev/api/planets/?format=json");
          let data = await res.json();
          setPlanetsM(data.results);
       }
