@@ -28,6 +28,12 @@ body {
   justify-content: center;
 }
 
+/* .planets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .navigation {
   cursor: pointer;
 }

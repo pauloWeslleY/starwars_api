@@ -417,33 +417,17 @@ export default function Person(props) {
 							<ModalHeader toggle={toggle}>All Person</ModalHeader>
 							<ModalBody>
 								<div>
-									{person.map((value, i) => {
-										return (
-											<h3 className="text-center" key={i}>
-												{value.name}
-											</h3>
-										);
+									{person.map((people) => {
+										return <h3 className="text-center" key={people.name}>{people.name}</h3>
 									})}
-									{personAll.map((value, i) => {
-										return (
-											<h3 className="text-center" key={i}>
-												{value.name}
-											</h3>
-										);
+									{personAll.map((personAll) => {
+										return <h3 className="text-center" key={personAll.name}>{personAll.name}</h3>
 									})}
-									{personAll3.map((value, i) => {
-										return (
-											<h3 className="text-center" key={i}>
-												{value.name}
-											</h3>
-										);
+									{personAll3.map((personAll3) => {
+										return <h3 className="text-center" key={personAll3.name}>{personAll3.name}</h3>
 									})}
-									{personAll4.map((value, i) => {
-										return (
-											<h3 className="text-center" key={i}>
-												{value.name}
-											</h3>
-										);
+									{personAll4.map((personAll4) => {
+										return <h3 className="text-center" key={personAll4.name}>{personAll4.name}</h3>
 									})}
 								</div>
 							</ModalBody>

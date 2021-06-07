@@ -23,7 +23,7 @@ const planetsMore = ({ data }) => {
 				<Jumbotron>
 					<h1 className="text-center">All Planets</h1>
 					<hr className="my-2" />
-					<div className="planets">
+					<div className="text-center">
 						{planets.map((planets, i) => {
 							return (
 								<Row>

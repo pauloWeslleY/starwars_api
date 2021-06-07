@@ -75,12 +75,8 @@ function Films({films}) {
 						<Jumbotron>
 							<h1 className="text-center">{moveName}</h1>
 							<div>
-								{films.map((value, i) => {
-									return (
-										<h3 className="text-center" key={i}>
-											{value.title}
-										</h3>
-									);
+								{films.map(move => {
+									return <h3 key={move.title} className="text-center">{move.title}</h3>
 								})}
 							</div>
 							<hr className="my-2" />

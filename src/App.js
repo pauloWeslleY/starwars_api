@@ -16,10 +16,11 @@ import { Container } from 'reactstrap';
 
 const App = () => {
    const [starships, setStarships] = useState([]);
-   const [vehicles,  setVehicles] = useState([]);
+   const [vehicles, setVehicles] = useState([]);
    const [species, setSpecies] = useState([]);
    const [planetsMore, setPlanetsM] = useState([]);
    const [moves, setFilms] = useState([]);
+   const [move, setMove] = useState([]);
    useEffect(() => {
       async function getFilms() {
          let res = await fetch('https://swapi.dev/api/films/');
@@ -46,6 +47,11 @@ const App = () => {
          let data = await res.json();
          setPlanetsM(data.results);
       }
+
+      fetch('https://swapi.dev/api/planets/?format=json')
+         .then(response => response.json())
+         .then(data => setMove(data))
+
       getPlanetsM();
       getSpecies();
       getVehicles();
@@ -61,7 +67,7 @@ const App = () => {
                   <Films films={moves} />
                </Route>
                <Route exact path='/person'>
-                  <Person />
+                  <Person data={ move }/>
                </Route>
                <Route exact path='/planets'>
                   <Planets />

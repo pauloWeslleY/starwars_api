@@ -24,27 +24,20 @@ const Vehicles = ({ data }) => {
 	const [vehicles4, setVehicles4] = useState([]);
 	useEffect(() => {
 		async function getVehicles2() {
-			let res = await fetch(
-				"https://swapi.dev/api/vehicles/?page=2&format=json",
-			);
+			let res = await fetch("https://swapi.dev/api/vehicles/?page=2&format=json");
 			let data = await res.json();
 			setVehicles2(data.results);
 		}
 		async function getVehicles3() {
-			let res = await fetch(
-				"https://swapi.dev/api/vehicles/?page=3&format=json",
-			);
+			let res = await fetch("https://swapi.dev/api/vehicles/?page=3&format=json");
 			let data = await res.json();
 			setVehicles3(data.results);
 		}
 		async function getVehicles4() {
-			let res = await fetch(
-				"https://swapi.dev/api/vehicles/?page=4&format=json",
-			);
+			let res = await fetch("https://swapi.dev/api/vehicles/?page=4&format=json");
 			let data = await res.json();
 			setVehicles4(data.results);
 		}
-
 		getVehicles2();
 		getVehicles3();
 		getVehicles4();
@@ -53,6 +46,8 @@ const Vehicles = ({ data }) => {
 	const toggle = (tab) => {
 		if (activeTab !== tab) setActiveTab(tab);
 	};
+
+	console.log();
 	return (
 		<>
 			<Container fluid={true}>
@@ -103,10 +98,10 @@ const Vehicles = ({ data }) => {
 					</Nav>
 					<TabContent activeTab={activeTab}>
 						<TabPane tabId="1">
-							{data.map((vehicles, i) => {
+							{data.map((...[vehicles, vehicles2]) => {
 								return (
 									<>
-										<Row key={i}>
+										<Row key={vehicles.name}>
 											<Col>
 												<Card body className="text-center">
 													<CardTitle tag="h5">
@@ -131,11 +126,7 @@ const Vehicles = ({ data }) => {
 															<strong>Consumables:</strong>
 															<li>{vehicles.consumables}</li>
 															<strong>Speed Max:</strong>
-															<li>
-																{
-																	vehicles.max_atmosphering_speed
-																}
-															</li>
+															<li>{vehicles.max_atmosphering_speed}</li>
 															<strong>Length:</strong>
 															<li>{vehicles.length}</li>
 														</List>
@@ -148,10 +139,10 @@ const Vehicles = ({ data }) => {
 							})}
 						</TabPane>
 						<TabPane tabId="2">
-							{vehicles2.map((vehicles2, i) => {
+							{vehicles2.map((vehicles2) => {
 								return (
 									<>
-										<Row key={i}>
+										<Row key={vehicles2.name}>
 											<Col>
 												<Card body className="text-center">
 													<CardTitle tag="h5">
@@ -193,10 +184,10 @@ const Vehicles = ({ data }) => {
 							})}
 						</TabPane>
 						<TabPane tabId="3">
-							{vehicles3.map((vehicles3, i) => {
+							{vehicles3.map((vehicles3) => {
 								return (
 									<>
-										<Row key={i}>
+										<Row key={vehicles3.name}>
 											<Col>
 												<Card body className="text-center">
 													<CardTitle tag="h5">
@@ -238,10 +229,10 @@ const Vehicles = ({ data }) => {
 							})}
 						</TabPane>
 						<TabPane tabId="4">
-							{vehicles4.map((vehicles4, i) => {
+							{vehicles4.map((vehicles4) => {
 								return (
 									<>
-										<Row key={i}>
+										<Row key={vehicles4.name}>
 											<Col>
 												<Card body className="text-center">
 													<CardTitle tag="h5">
