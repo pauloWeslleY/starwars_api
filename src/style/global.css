@@ -1,5 +1,6 @@
 body {
   background-color: rgb(211, 211, 211);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .star_wars_logo {
@@ -28,12 +29,6 @@ body {
   justify-content: center;
 }
 
-/* .planets {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .navigation {
   cursor: pointer;
 }
@@ -54,40 +49,3 @@ body {
     transform: translate(0px, 0px);
   }
 }
-
-
-/* .star_wars {
-  text-align: center;
-}
-
-.star_wars_logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .star_wars_logo {
-    animation: star_wars_logo-spin infinite 20s linear;
-  }
-}
-
-.h_star_wars_header {
-  background-color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin-top: -140px;
-}
-keyframes star_wars_logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-} */

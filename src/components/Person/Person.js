@@ -20,13 +20,13 @@ import {
 } from "reactstrap";
 import "../../style/global.css";
 
-export default function Person(props) {
+export default function Person(props, {data}) {
 	const { className } = props;
+	// const person = data;
 
 	const [modal, setModal] = useState(false);
 	const toggle = () => setModal(!modal);
 
-	const [person, setPerson] = useState([]);
 	const [personAll, setAllPerson] = useState([]);
 	const [personAll3, setAllPerson3] = useState([]);
 	const [personAll4, setAllPerson4] = useState([]);
@@ -41,11 +41,6 @@ export default function Person(props) {
 	const [people8, setPeople8] = useState([]);
 	const [people9, setPeople9] = useState([]);
 	useEffect(() => {
-		async function getAllPerson() {
-			let res = await fetch("https://swapi.dev/api/people/");
-			let data = await res.json();
-			setPerson(data.results);
-		}
 		async function getAllPerson2() {
 			let res = await fetch("https://swapi.dev/api/people/?page=2");
 			let data = await res.json();
@@ -118,8 +113,7 @@ export default function Person(props) {
 		getPeople7();
 		getPeople8();
 		getPeople9();
-		//! All People
-		getAllPerson();
+		//TODO: All People
 		getAllPerson2();
 		getAllPerson3();
 		getAllPerson4();
@@ -417,9 +411,6 @@ export default function Person(props) {
 							<ModalHeader toggle={toggle}>All Person</ModalHeader>
 							<ModalBody>
 								<div>
-									{person.map((people) => {
-										return <h3 className="text-center" key={people.name}>{people.name}</h3>
-									})}
 									{personAll.map((personAll) => {
 										return <h3 className="text-center" key={personAll.name}>{personAll.name}</h3>
 									})}

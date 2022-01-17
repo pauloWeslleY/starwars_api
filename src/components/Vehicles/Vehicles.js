@@ -17,6 +17,7 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import "../../style/global.css";
+import './style.module.css';
 
 const Vehicles = ({ data }) => {
 	const [vehicles2, setVehicles2] = useState([]);
@@ -46,8 +47,6 @@ const Vehicles = ({ data }) => {
 	const toggle = (tab) => {
 		if (activeTab !== tab) setActiveTab(tab);
 	};
-
-	console.log();
 	return (
 		<>
 			<Container fluid={true}>

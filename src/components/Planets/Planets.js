@@ -23,7 +23,8 @@ import {
 
 import "../../style/global.css";
 
-export default function People(props) {
+export default function People({data}) {
+	const planetsAll = data;
 	const [planets1, setPlanets1] = useState([]);
 	const [planets2, setPlanets2] = useState([]);
 	const [planets3, setPlanets3] = useState([]);
@@ -34,7 +35,6 @@ export default function People(props) {
 	const [planets8, setPlanets8] = useState([]);
 	const [planets9, setPlanets9] = useState([]);
 	const [planets10, setPlanets10] = useState([]);
-	const [planetsAll, setPlanetsAll] = useState([]);
 	useEffect(() => {
 		async function getPlanets1() {
 			let res = await fetch("https://swapi.dev/api/planets/1/");
@@ -86,15 +86,7 @@ export default function People(props) {
 			let data = await res.json();
 			setPlanets10(data);
 		}
-		async function getPlanetsAll() {
-			let res = await fetch(
-				"https://swapi.dev/api/planets/?page=2&format=json",
-			);
-			let data = await res.json();
-			setPlanetsAll(data.results);
-		}
 
-		getPlanetsAll();
 		getPlanets1();
 		getPlanets2();
 		getPlanets3();
@@ -494,7 +486,7 @@ export default function People(props) {
 									</CardBody>
 								</Card>
 								<Card>
-									{planetsAll.map((planets, i) => {
+									{planetsAll.map((planets) => {
 										return (
 											<>
 												<Row>

@@ -57,15 +57,24 @@ function Films({films}) {
       starFilms6();
    }, [])
 
+	const move = films.map((move) => {
+		return (
+			<h3 key={move.title} className="text-center">
+				{move.title}
+			</h3>
+		);
+	})
+
    const moveName = "Films";
 	const detailMove = {
+		title: "Films",
 		episode: "Episode",
 		director: "Director",
-		sinopse: "Sinopse",
+		sinopse: "Description",
 		planets: "Planets",
 		species: "Species",
 		starships: "Starships",
-		url: "Url",
+		url: "Link",
 	};
    return (
 		<>
@@ -74,11 +83,7 @@ function Films({films}) {
 					<Col>
 						<Jumbotron>
 							<h1 className="text-center">{moveName}</h1>
-							<div>
-								{films.map(move => {
-									return <h3 key={move.title} className="text-center">{move.title}</h3>
-								})}
-							</div>
+							<div>{move}</div>
 							<hr className="my-2" />
 							<div className="text-center">
 								<Button
@@ -134,34 +139,37 @@ function Films({films}) {
 										<CardBody>
 											<List type="unstyled">
 												<li>
-													<h4>Filme 1: {films1.title}</h4>
+													<h4>
+														{detailMove.title}: {films1.title}
+													</h4>
 												</li>
 												<li>
-                                       <strong>{ detailMove.episode }</strong>:{" "}
+													<strong>{detailMove.episode}</strong>:{" "}
 													{films1.episode_id}
 												</li>
 												<li>
-													<strong>Director</strong>:{" "}
+													<strong>{detailMove.director}</strong>:{" "}
 													{films1.director}
 												</li>
 												<li>
-													<strong>Sinopse</strong>:{" "}
+													<strong>{detailMove.sinopse}</strong>:{" "}
 													{films1.opening_crawl}
 												</li>
 												<li>
-													<strong>Planets</strong>:{" "}
+													<strong>{detailMove.planets}</strong>:{" "}
 													{films1.planets}
 												</li>
 												<li>
-													<strong>Species</strong>:{" "}
+													<strong>{detailMove.species}</strong>:{" "}
 													{films1.species}
 												</li>
 												<li>
-													<strong>Starships</strong>:{" "}
+													<strong>{detailMove.starships}</strong>:{" "}
 													{films1.starships}
 												</li>
 												<li>
-													<strong>Url</strong>: {films1.url}
+													<strong>{detailMove.url}</strong>:{" "}
+													{films1.url}
 												</li>
 											</List>
 										</CardBody>
@@ -172,7 +180,9 @@ function Films({films}) {
 										<CardBody>
 											<List type="unstyled">
 												<li>
-													<h4>Filme 2: {films2.title}</h4>
+													<h4>
+														{detailMove.title}: {films2.title}
+													</h4>
 												</li>
 												<li>
 													<p>
@@ -396,7 +406,7 @@ function Films({films}) {
 											</List>
 										</CardBody>
 									</Card>
-                        </UncontrolledCollapse>
+								</UncontrolledCollapse>
 							</div>
 						</Jumbotron>
 					</Col>

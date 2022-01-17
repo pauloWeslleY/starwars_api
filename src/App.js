@@ -20,7 +20,9 @@ const App = () => {
    const [species, setSpecies] = useState([]);
    const [planetsMore, setPlanetsM] = useState([]);
    const [moves, setFilms] = useState([]);
-   const [move, setMove] = useState([]);
+	const [planetsAll, setPlanetsAll] = useState([]);
+	const [person, setPerson] = useState([]);
+
    useEffect(() => {
       async function getFilms() {
          let res = await fetch('https://swapi.dev/api/films/');
@@ -47,11 +49,19 @@ const App = () => {
          let data = await res.json();
          setPlanetsM(data.results);
       }
+      async function getPlanetsAll() {
+			let res = await fetch("https://swapi.dev/api/planets/?page=2&format=json");
+			let data = await res.json();
+			setPlanetsAll(data.results);
+		}
+      async function getAllPerson() {
+			let res = await fetch("https://swapi.dev/api/people/");
+			let data = await res.json();
+			setPerson(data.results);
+		}
 
-      fetch('https://swapi.dev/api/planets/?format=json')
-         .then(response => response.json())
-         .then(data => setMove(data))
-
+      getAllPerson();
+      getPlanetsAll();
       getPlanetsM();
       getSpecies();
       getVehicles();
@@ -59,38 +69,38 @@ const App = () => {
       getStarships();
    }, [])
    return (
-      <Router>
-         <Headers />
-         <Container fluid={true}>
-            <Switch>
-               <Route exact path='/films'>
-                  <Films films={moves} />
-               </Route>
-               <Route exact path='/person'>
-                  <Person data={ move }/>
-               </Route>
-               <Route exact path='/planets'>
-                  <Planets />
-               </Route>
-               <Route exact path='/vehicles'>
-                  <Vehicles data={vehicles}/>
-               </Route>
-               <Route exact path='/starships'>
-                  <Nave data={starships}/>
-               </Route>
-               <Route exact path='/species'>
-                  <Species data={species} />
-               </Route>
-               <Route exact path='/planetsMore'>
-                  <PlanetsMore data={planetsMore} />
-               </Route>
-               <header className="h_star_wars_header">
-                  <img src={Logotipo} className="star_wars_logo" alt="logo" />
-               </header>
-            </Switch>
-         </Container>
-      </Router>
-   );
+		<Router>
+			<Headers />
+			<Container fluid={true}>
+				<Switch>
+					<Route exact path="/films">
+						<Films key={moves.id} films={moves} />
+					</Route>
+					<Route exact path="/person">
+						<Person key={person.id} data={person} />
+					</Route>
+					<Route exact path="/planets">
+						<Planets key={planetsAll.id} data={planetsAll} />
+					</Route>
+					<Route exact path="/vehicles">
+						<Vehicles key={vehicles.id} data={vehicles} />
+					</Route>
+					<Route exact path="/starships">
+						<Nave key={starships.id} data={starships} />
+					</Route>
+					<Route exact path="/species">
+						<Species key={species} data={species} />
+					</Route>
+					<Route exact path="/planetsMore">
+                  <PlanetsMore key={planetsMore.id} data={planetsMore} />
+					</Route>
+					<header className="h_star_wars_header">
+						<img src={Logotipo} className="star_wars_logo" alt="logo" />
+					</header>
+				</Switch>
+			</Container>
+		</Router>
+	);
 }
 
 export default App;
